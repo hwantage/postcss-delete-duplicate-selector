@@ -1,0 +1,26 @@
+{
+  "name": "postcss-delete-duplicate-selector",
+  "version": "1.0.0",
+  "description": "PostCSS plugin delete duplicate css selector in the file",
+  "main": "src/index.js",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "delete",
+    "duplicate",
+	"selector"
+  ],
+  "author": "hwantage <hwantagexsw2@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/hwantage/postcss-delete-duplicate-selector",
+  "engines": {
+    "node": ">=18.15.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.32"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.8"
+  }
+}
