@@ -76,7 +76,7 @@ Or you can use `postcss.config.js` file. Create a `postcss.config.js` file in yo
 ```
 module.exports = {
   plugins: [
-    require('postcss-delete-duplicate-css')
+    require('postcss-delete-duplicate-selector')
   ],
 };
 ```
