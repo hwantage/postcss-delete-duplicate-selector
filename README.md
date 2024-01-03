@@ -44,21 +44,61 @@ h1, h2 {
 
 ## **Installation**
 
-`$ npm i -D postcss`
+`$ npm i -D postcss postcss-cli`
 
 `$ npm i -D postcss-delete-duplicate-selector`
 
-## **Usage**
+## **Usage 1**
+
+**package.json:**
+
+```jsx
+{
+	"scripts": {
+		"build": "postcss input.css --use postcss-delete-duplicate-selector --output output.css"
+	},
+	"devDependencies": {
+		"postcss": "^8.4.32",
+		"postcss-cli": "^11.0.0",
+		"postcss-delete-duplicate-selector": "^1.0.0"
+	}
+}
+```
+
+and then `npm run build`
+
+## **Usage 2**
+
+Or you can use `postcss.config.js` file. Create a `postcss.config.js` file in your root directory.
 
 **postcss.config.js:**
 
-```jsx
+```
 module.exports = {
   plugins: [
     require('postcss-delete-duplicate-css')
   ],
 };
 ```
+
+Change the build script to look like this
+
+**package.json:**
+
+```jsx
+{
+	"scripts": {
+		"build": "postcss input.css --output output.css"
+	},
+	"devDependencies": {
+		"postcss": "^8.4.32",
+		"postcss-cli": "^11.0.0",
+		"postcss-delete-duplicate-selector": "^1.0.0"
+	}
+}
+```
+
+and then `npm run build`
 
 See **[PostCSS](https://github.com/postcss/postcss)** docs for **[examples regarding usage](https://github.com/postcss/postcss#usage)**.
 
