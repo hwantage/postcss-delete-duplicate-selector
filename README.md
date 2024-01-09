@@ -42,11 +42,16 @@ h1, h2 {
 }
 ```
 
+
+<br/>
+
 ## **Installation**
 
 `$ npm i -D postcss postcss-cli`
 
 `$ npm i -D postcss-delete-duplicate-selector`
+
+<br/>
 
 ## **Usage 1**
 
@@ -66,6 +71,8 @@ h1, h2 {
 ```
 
 and then `npm run build`
+
+
 
 ## **Usage 2**
 
@@ -102,11 +109,30 @@ and then `npm run build`
 
 See **[PostCSS](https://github.com/postcss/postcss)** docs for **[examples regarding usage](https://github.com/postcss/postcss#usage)**.
 
+
+<br/>
+
 ## **Options**
 
 N/A
 
-### Additional Info
+
+<br/>
+
+## **Additional Info**
+
+You can merge the two files with the command below.
+
+```shell
+# linux
+$ cat a.css b.css > input.css
+
+# windows
+> type a.css b.css > input.css
+
+```
+
+<br/>
 
 This plugin will delete all comments.
 
@@ -128,7 +154,8 @@ This plugin will delete all comments.
 }
 ```
 
-This plugin does not consider whitespace between selectors.
+<br/>
+This plugin does not consider whitespace between selectors. Therefore, it's recommended to run it after the CSS minify.
 
 **input.css:**
 
@@ -142,7 +169,7 @@ h1,h2 {
 }
 ```
 
-**output.css:**
+**output.css:** (result is same)
 
 ```css
 h1, h2 {
@@ -153,6 +180,8 @@ h1,h2 {
   width: 100%;
 }
 ```
+
+<br/>
 
 ## **License**
 
