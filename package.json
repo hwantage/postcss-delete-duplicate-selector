@@ -13,7 +13,10 @@
   ],
   "author": "hwantage <hwantagexsw2@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/hwantage/postcss-delete-duplicate-selector",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hwantage/postcss-delete-duplicate-selector.git"
+  },
   "engines": {
     "node": ">=18.15.0"
   },
