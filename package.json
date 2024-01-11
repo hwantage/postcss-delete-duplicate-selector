@@ -9,7 +9,8 @@
     "postcss-plugin",
     "delete",
     "duplicate",
-    "selector"
+    "selector",
+    "Deduplication"
   ],
   "author": "hwantage <hwantagexsw2@gmail.com>",
   "license": "MIT",
