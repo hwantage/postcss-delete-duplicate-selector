@@ -1,27 +1,43 @@
-const postcss = require('postcss');
+const postcss = require("postcss");
 
 const plugin = (opts = {}) => {
-    return {
-		postcssPlugin: 'postcss-delete-duplicate-selector',
-		Once (root, { result }) {
-			const filteredRules = new Map();
-		
-			root.walkRules((rule) => {
-				const selector = rule.selector;
+  return {
+    postcssPlugin: "postcss-delete-duplicate-selector",
+    Once(root, { result }) {
+      const filteredRules = new Map();
 
-				if (!filteredRules.has(selector)) {
-				filteredRules.set(selector, rule);
-				}
-			});
+      root.walk((node) => {
+        // Check if the node is a rule and not an at-rule and parent type is root
+        if (node.type === "rule" && node.parent.type === "root") {
+          const selector = node.selector;
 
-			root.removeAll();
+          if (!filteredRules.has(selector)) {
+            filteredRules.set(selector, node);
+          }
+        } else if (node.type === "atrule") {
+          const mediaRule = postcss.atRule({
+            name: node.name,
+            params: node.params,
+          });
 
-			filteredRules.forEach((rule) => {
-				root.append(rule);
-			});
-		}
-    }
-}
-plugin.postcss = true
+          node.nodes.forEach((rule) => {
+            const clonedRule = rule.clone();
+            mediaRule.append(clonedRule);
+          });
 
-module.exports = plugin
+          filteredRules.set(mediaRule.toString(), mediaRule);
+        }
+      });
+
+      root.removeAll();
+
+      filteredRules.forEach((rule, index) => {
+        root.append(rule);
+      });
+    },
+  };
+};
+
+plugin.postcss = true;
+
+module.exports = plugin;
