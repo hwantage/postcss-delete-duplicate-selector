@@ -8,19 +8,15 @@ This plugin deletes duplicate css selectors. It removes the duplicate selector a
 .hello {
   width: 100%;
 }
-
 h1, h2 {
   color: red;
 }
-
 .hello {
   padding-left: 10px;
 }
-
 h1, h2 {
   color: blue;
 }
-
 .other {
 	display: none;
 }
@@ -32,11 +28,9 @@ h1, h2 {
 .hello {
   width: 100%;
 }
-
 h1, h2 {
   color: red;
 }
-
 .other {
 	display: none;
 }
@@ -155,7 +149,7 @@ This plugin will delete all comments.
 ```
 
 <br/>
-This plugin does not consider whitespace between selectors. Therefore, it's recommended to run it after the CSS minify.
+This plugin does not consider whitespace between selectors. Therefore, it's recommended to run it after the CSS minify or CSS prettify.
 
 **input.css:**
 
@@ -163,7 +157,6 @@ This plugin does not consider whitespace between selectors. Therefore, it's reco
 h1, h2 {
   width: 100%;
 }
-
 h1,h2 {
   width: 100%;
 }
@@ -175,9 +168,36 @@ h1,h2 {
 h1, h2 {
   width: 100%;
 }
-
 h1,h2 {
   width: 100%;
+}
+```
+
+<br/>
+Deduplication is not performed for atrules like @media. However, deduplication is performed on declarations that are exactly the same.
+
+input.css:
+
+```css
+@font-face {
+  font-weight: 700;
+}
+@font-face {
+  font-weight: 500;
+}
+@font-face {
+  font-weight: 500;
+}
+```
+
+output.css:
+
+```css
+@font-face {
+  font-weight: 700;
+}
+@font-face {
+  font-weight: 500;
 }
 ```
 
