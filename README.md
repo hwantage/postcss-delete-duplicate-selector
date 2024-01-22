@@ -59,7 +59,7 @@ h1, h2 {
 	"devDependencies": {
 		"postcss": "^8.4.32",
 		"postcss-cli": "^11.0.0",
-		"postcss-delete-duplicate-selector": "^1.0.0"
+		"postcss-delete-duplicate-selector": "^1.1.0"
 	}
 }
 ```
@@ -94,7 +94,7 @@ Change the build script to look like this
 	"devDependencies": {
 		"postcss": "^8.4.32",
 		"postcss-cli": "^11.0.0",
-		"postcss-delete-duplicate-selector": "^1.0.0"
+		"postcss-delete-duplicate-selector": "^1.1.0"
 	}
 }
 ```
