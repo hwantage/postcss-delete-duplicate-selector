@@ -20,10 +20,11 @@ const plugin = (opts = {}) => {
             params: node.params,
           });
 
-          node.nodes.forEach((rule) => {
-            const clonedRule = rule.clone();
-            mediaRule.append(clonedRule);
-          });
+          node.nodes &&
+            node.nodes.forEach((rule) => {
+              const clonedRule = rule.clone();
+              mediaRule.append(clonedRule);
+            });
 
           filteredRules.set(mediaRule.toString(), mediaRule);
         }
