@@ -14,14 +14,8 @@ This plugin deletes duplicate css selectors. It removes the duplicate selector a
 .hello {
   width: 100%;
 }
-h1, h2 {
-  color: red;
-}
 .hello {
   padding-left: 10px;
-}
-h1, h2 {
-  color: blue;
 }
 .other {
 	display: none;
@@ -33,9 +27,6 @@ h1, h2 {
 ```css
 .hello {
   width: 100%;
-}
-h1, h2 {
-  color: red;
 }
 .other {
 	display: none;
@@ -65,7 +56,7 @@ h1, h2 {
 	"devDependencies": {
 		"postcss": "^8.4.32",
 		"postcss-cli": "^11.0.0",
-		"postcss-delete-duplicate-selector": "^1.1.1"
+		"postcss-delete-duplicate-selector": "^1.2.2"
 	}
 }
 ```
@@ -100,7 +91,7 @@ Change the build script to look like this
 	"devDependencies": {
 		"postcss": "^8.4.32",
 		"postcss-cli": "^11.0.0",
-		"postcss-delete-duplicate-selector": "^1.1.1"
+		"postcss-delete-duplicate-selector": "^1.2.2"
 	}
 }
 ```
