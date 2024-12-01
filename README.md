@@ -1,7 +1,4 @@
 
-<img align="right" width="100" height="100"
-     title="Philosopher’s stone, logo of PostCSS"
-     src="http://postcss.github.io/postcss/logo.svg">
 **[PostCSS](https://github.com/postcss/postcss)** plugin for delete duplicate css selector in the file.
 
 This plugin deletes duplicate css selectors. It removes the duplicate selector at the bottom, leaving the top one.
